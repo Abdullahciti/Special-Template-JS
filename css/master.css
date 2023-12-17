@@ -352,6 +352,14 @@ a:visited{
 .about .imgs-box img{
     width: 450px;
 }
+@media (max-width:350px){
+    .about .imgs-box{
+        display: none;
+    }
+    .about .imgs-box img{
+        max-width: 100%;
+    }
+}
 @media (max-width:767px) {
     .container{
         justify-content: center;
@@ -426,7 +434,7 @@ a:visited{
 /* End Skills Container */
 /* Start Gallery */
 .gallery{
-    padding: var(--main-padding);
+    padding: var(--main-padding) 0;
 }
 .gallery .container{
     display: flex;
@@ -452,7 +460,17 @@ a:visited{
     background: #f6f6f6;
     cursor: pointer;
 }
+@media (max-width:370px){
+    .gallery .container .images-box{
+        grid-template-columns: 1fr !important;
+    }
+}
 @media (max-width:767px) {
+    .gallery .container .images-box{
+        grid-template-columns: repeat(2, minmax(180px, 1fr));
+    }
+}
+@media (max-width: 1150px) {
     .gallery .container .images-box{
         grid-template-columns: repeat(2, minmax(180px, 1fr));
     }
@@ -511,8 +529,7 @@ a:visited{
 /* Start TimeLine */
 /* Start Timeline */
 .timeline {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding: var(--main-padding 0);
     background-color: #EEE; 
 }
 .timeline .timeline-content {
@@ -577,22 +594,18 @@ a:visited{
 .timeline .timeline-content .left .content::after{
     position: absolute;
     content: '';
-    right: -30px;
-    top: 2px;
-    border-width: 15px;
-    width: 30px;
-    height: 30px;
+    right: -15px;
+    top: 8px;
+    border-width: 8px;
     border-style: solid;
     border-color: transparent transparent transparent #fff;
 }
 .timeline .timeline-content .right .content::before{
     position: absolute;
     content: '';
-    left: -30px;
-    top: 2px;
-    border-width: 15px;
-    width: 30px;
-    height: 30px;
+    left: -15px;
+    top: 8px;
+    border-width: 8px;
     border-style: solid;
     border-color: transparent #fff transparent transparent;
 }
@@ -600,6 +613,21 @@ a:visited{
     font-weight: bold;
     color: var(--main-color);
     margin-bottom: 20px;
+}
+@media (max-width:767px) {
+    .timeline .timeline-content .content {
+        padding: 15px;
+        margin: 0px 0px;
+    }
+    .timeline .timeline-content .left,
+    .timeline .timeline-content .right{
+        width: calc(50% - 25px);
+        margin-bottom: 40px;
+        position: relative;
+    }
+    .timeline .timeline-content .content h3{
+        font-size: 16px;
+    }
 }
 .timeline .timeline-content .content p{
     color: #666;
