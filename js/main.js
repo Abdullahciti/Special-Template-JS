@@ -117,7 +117,17 @@ backgroundImg.forEach((img, index) => {
     })
 })
 // Settings Box Html File => END
+// Start Nav Bullets 
+let navBullets = document.querySelectorAll(".nav-bullets .bullet");
 
+navBullets.forEach(bullet => {
+    bullet.addEventListener("click", (event) =>{
+        document.querySelector(event.currentTarget.dataset.section).scrollIntoView()
+        navBullets.forEach(bullet => bullet.classList.remove("active"))
+        bullet.classList.add("active");
+    })
+})
+// End Nav Bullets 
 // Start Skills 
 let skills = document.querySelector(".skills")
 let skillProgress = document.querySelectorAll(".skill-progress span");
@@ -239,5 +249,4 @@ document.addEventListener("click", e => {
     }
     
 })
-
 // Gallery End 
