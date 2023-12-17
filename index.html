@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Special Template</title>
+    <title>Special TopC Template</title>
     <!-- normalizition -->
     <link rel="stylesheet" href="css/normalize.css">
     <!-- Master Css -->
@@ -20,40 +20,172 @@
 </head>
 <body>
 
-
+    <button class="go-up"><i class="fa-solid fa-arrow-up"></i></button>
+    <div class="loader"></div>
 
     <!-- Start Settings Box -->
     <div class="settings-box">
-        <i class="fa fa-gear"></i>
+        <div class="gear-icon">
+            <i class="fa fa-gear"></i>
+        </div>
         <div class="settings-container">
-            Testing Options
+            <div class="options-box">
+                <h4>Colors</h4>
+                <ul class="colors-list">
+                    <li class="active" data-color="#ff9800"></li>
+                    <li data-color="#E91e63"></li>
+                    <li data-color="#009688"></li>
+                    <li data-color="#03A9f4"></li>
+                    <li data-color="#4caf50"></li>
+                </ul>
+            </div>
+            <div class="options-box">
+                <h4>Random Backgrounds</h4>
+                <ul class="answers-list">
+                    <li>Off</li>
+                    <li class="active">On</li>
+                </ul>
+            </div>
+            <div class="options-box">
+                <h4 class="pick">Pick One</h4>
+                <ul class="background-options">
+                    <li><img class="active" src="imgs/01.jpg" data-background="imgs/01.jpg" ></li>
+                    <li><img src="imgs/02.jpg" data-background="imgs/02.jpg" ></li>
+                    <li><img src="imgs/03.jpg" data-background="imgs/03.jpg" ></li>
+                    <li><img src="imgs/04.jpg" data-background="imgs/04.jpg" ></li>
+                </ul>
+            </div>
         </div>
     </div>
     <!-- End Settings Box -->
-
-
-
-
     <!-- Landing  -->
     <div class="landing">
         <div class="overlay"></div>
-        <div class="header-area">
-            <div class="logo">Special Design</div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#service">Service</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <div class="container">
+            <div class="header-area">
+                <div class="logo">Top<span>C</span> Special</div>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#service">Service</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="introduction-text">
+                <h1>We are <span>creative</span> and powerful</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla sapiente dolorem sunt laboriosam nostrum autem illum nobis rem alias sequi!</p>
+            </div>
         </div>
-        <div class="introduction-text">
-            <h1>We are <span>creative</span> and powerful</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla sapiente dolorem sunt laboriosam nostrum autem illum nobis rem alias sequi!</p>
-        </div>
-        </div>
+    </div>
     <!-- Landing End -->
-
-
+    <!-- About Start -->
+    <div class="about" id="about">
+        <div class="container">
+            <div class="info-text">
+                <h2>About Us</h2>
+                <h3>Join Us on Our Journey</h3>
+                <p>  We are excited about the future and the opportunities that lie ahead. Whether you're a Client, we invite you to join us on this exciting journey.Thank you for being a part of the Your XXX Company family! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis aspernatur, quisquam nihil odit recusandae culpa perferendis suscipit aliquam tenetur tempora.</p>
+            </div>
+            <div class="imgs-box">
+                <img src="imgs/imgs/events.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+    <!-- Skills Start -->
+    <div class="skills">
+        <div class="container">
+            <div class="info-text">
+                <h2>My Skills</h2>
+            </div>
+            <div class="skill-box">
+                <div class="skill-name">HTML</div>
+                <div class="skill-progress"><span data-progress="90"></span></div>
+            </div>
+            <div class="skill-box">
+                <div class="skill-name">CSS</div>
+                <div class="skill-progress"><span data-progress="95"></span></div>
+            </div>
+            <div class="skill-box">
+                <div class="skill-name">JavaScript</div>
+                <div class="skill-progress"><span data-progress="70"></span></div>
+            </div>
+            <div class="skill-box">
+                <div class="skill-name">Vue.js</div>
+                <div class="skill-progress"><span data-progress="40"></span></div>
+            </div>
+            <div class="skill-box">
+                <div class="skill-name">React</div>
+                <div class="skill-progress"><span data-progress="40"></span></div>
+            </div>
+            <div class="skill-box">
+                <div class="skill-name">PHP</div>
+                <div class="skill-progress"><span data-progress="10"></span></div>
+            </div>
+        </div>
+    </div>
+    <!-- Skills End -->
+    <!-- Start Gellry -->
+    <div class="gallery" id="gallery">
+        <div class="container">
+            <div class="info-text">
+                <h2>Our Gallery</h2>
+            </div>
+            <div class="images-box">
+                <img src="imgs/content-imgs/01.jpg" alt="Image One">
+                <img src="imgs/content-imgs/02.jpg" alt="Image Two">
+                <img src="imgs/content-imgs/03.jpg" alt="Image Three">
+                <img src="imgs/content-imgs/04.jpg" alt="Image Four">
+                <img src="imgs/content-imgs/05.jpg" alt="Image Five">
+                <img src="imgs/content-imgs/06.png" alt="Image Six">
+                <img src="imgs/content-imgs/07.jpg" alt="Image Seven">
+                <img src="imgs/content-imgs/08.jpg" alt="Image Eight">
+                <img src="imgs/content-imgs/09.jpg" alt="Image Nine">
+                <img src="imgs/content-imgs/10.jpg" alt="Image Ten">
+            </div>
+        </div>
+    </div>
+    <!-- End Gallery --> 
+    <section class="spikes"></section>
+    <!-- Start Timeline -->
+    <div class="timeline">
+        <div class="container">
+            <div class="timeline-content">
+                <div class="year">2024</div>
+                <div class="left">
+                    <div class="content">
+                        <h3>Testing Heading</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti ex molestiae illo nisi quaerat veniam beatae aliquid eligendi. Aliquid tenetur quas ex, sequi porro nam commodi placeat maxime nobis quam?</p>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="right">
+                    <div class="content">
+                        <h3>Testing Heading</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti ex molestiae illo nisi quaerat veniam beatae aliquid eligendi. Aliquid tenetur quas ex, sequi porro nam commodi placeat maxime nobis quam?</p>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="year">2022</div>
+                <div class="left">
+                    <div class="content">
+                        <h3>Testing Heading</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti ex molestiae illo nisi quaerat veniam beatae aliquid eligendi. Aliquid tenetur quas ex, sequi porro nam commodi placeat maxime nobis quam?</p>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="left">
+                    <div class="content">
+                        <h3>Testing Heading</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti ex molestiae illo nisi quaerat veniam beatae aliquid eligendi. Aliquid tenetur quas ex, sequi porro nam commodi placeat maxime nobis quam?</p>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+        <!-- End Timeline -->
+    <!-- End Time-Line -->
     <script src="js/main.js"></script>
 </body>
 </html>
