@@ -216,7 +216,7 @@ body{
 .nav-bullets{
     position: fixed;
     right: 0px;
-    top: 42%;
+    top: 36%;
     z-index: 1000;
 }
 .nav-bullets .bullet{
