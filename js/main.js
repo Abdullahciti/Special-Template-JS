@@ -127,6 +127,7 @@ headerUlLi.forEach(li => {
 function scrollToSection (ele) {
     ele.forEach(el => {
         el.addEventListener("click", (e) =>{
+            e.preventDefault()
             document.querySelector(e.currentTarget.dataset.section).scrollIntoView({
                 behavior: "smooth"
             })
