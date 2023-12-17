@@ -2,7 +2,7 @@
 const landing = document.querySelector(".landing"),
 header = document.querySelector(".header-area"),
 headerUl = document.querySelector(".header-area ul"),
-headerUlLi = document.querySelectorAll(".header-area ul li"),
+headerUlLi = document.querySelectorAll(".header-area ul li a"),
 settingsBox = document.querySelector(".settings-box"),
 gearIconBox = document.querySelector(".gear-icon"),
 settingsIcon = document.querySelector(".fa-gear"),
@@ -117,16 +117,27 @@ backgroundImg.forEach((img, index) => {
     })
 })
 // Settings Box Html File => END
-// Start Nav Bullets 
+// Start Nav Bullets and Ul Li Header Menu
 let navBullets = document.querySelectorAll(".nav-bullets .bullet");
-
-navBullets.forEach(bullet => {
-    bullet.addEventListener("click", (event) =>{
-        document.querySelector(event.currentTarget.dataset.section).scrollIntoView()
+headerUlLi.forEach(li => {
+    li.addEventListener("click", e =>{
         navBullets.forEach(bullet => bullet.classList.remove("active"))
-        bullet.classList.add("active");
     })
 })
+function scrollToSection (ele) {
+    ele.forEach(el => {
+        el.addEventListener("click", (e) =>{
+            document.querySelector(e.currentTarget.dataset.section).scrollIntoView({
+                behavior: "smooth"
+            })
+            ele.forEach(bullet => bullet.classList.remove("active"))
+            el.classList.add("active");
+        })
+    })
+}
+
+scrollToSection(navBullets)
+scrollToSection(headerUlLi)
 // End Nav Bullets 
 // Start Skills 
 let skills = document.querySelector(".skills")
