@@ -20,7 +20,10 @@ function autoSlideBackgrounds() {
             randomIndex = -1;
         }
         randomIndex++
-        landing.style = `background:url("${backArray[randomIndex]}");`
+        landing.style = `background:url("${backArray[randomIndex]}");
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: center;`
     }, 10000);
 }
 
@@ -116,6 +119,28 @@ backgroundImg.forEach((img, index) => {
         landing.style = `background-image:url(${localStorage.getItem("background")});`
     })
 })
+
+let showBullets = document.querySelectorAll(".answers-list span");
+
+let showBulOption = localStorage.getItem("bullets")
+
+showBullets[0].addEventListener("click", e => {
+    navBullets.forEach((bullet) => bullet.style.display = "none");
+    localStorage.setItem("bullet", "none");
+})
+
+showBullets[1].addEventListener("click", e => {
+    navBullets.forEach((bullet) => bullet.style.display = "block");
+    localStorage.setItem("bullet", "block");
+})
+
+showBullets.forEach((span, index) => {
+    span.addEventListener("click", () => {
+        showBullets.forEach(span => span.classList.remove("active"));
+        span.classList.add("active");
+    })
+});
+
 // Settings Box Html File => END
 // Start Nav Bullets and Ul Li Header Menu
 let navBullets = document.querySelectorAll(".nav-bullets .bullet");
@@ -124,6 +149,18 @@ headerUlLi.forEach(li => {
         navBullets.forEach(bullet => bullet.classList.remove("active"))
     })
 })
+
+if (localStorage.getItem("bullet") == "block") {
+    navBullets.forEach(bullet => bullet.style.display = `block`);
+    showBullets.forEach(span => span.classList.remove("active"));
+    showBullets[1].classList.add("active");
+}
+if (localStorage.getItem("bullet") == "none") {
+    navBullets.forEach(bullet => bullet.style.display = `none`);
+    showBullets.forEach(span => span.classList.remove("active"));
+    showBullets[0].classList.add("active");
+}
+
 function scrollToSection (ele) {
     ele.forEach(el => {
         el.addEventListener("click", (e) =>{
@@ -136,7 +173,14 @@ function scrollToSection (ele) {
         })
     })
 }
-
+// Start Reset Button
+let resetBtn = document.querySelector(".button");
+resetBtn.onclick = () =>{
+    console.log("hello")
+    window.localStorage.clear();
+    window.location.reload()
+}
+// End Reset Button
 scrollToSection(navBullets)
 scrollToSection(headerUlLi)
 // End Nav Bullets 
@@ -182,7 +226,7 @@ window.onscroll = () => {
     //  End Loader - Btn Go Up
 
     // Start Skills Interval by scrolling
-    if (window.scrollY > (skills.offsetTop)) {
+    if (window.scrollY > (skills.offsetTop - 150)) {
         if (!started){
             skillProgress.forEach((skill) => {
                 startFindSkills(skill)
