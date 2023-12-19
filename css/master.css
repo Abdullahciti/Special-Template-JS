@@ -358,6 +358,9 @@ body{
     font-size: 34px;
     font-weight: bold;
 }
+.landing .header-area .bar-icon{
+    display: none;
+}
 .landing .header-area ul{
     display: flex;
 }
@@ -417,9 +420,17 @@ a:visited{
         font-size: 14px !important;
     }
     .header-area ul{
-        padding-top: 15px !important;
-        gap: 5px !important;
+        top: 52px !important;
     }
+    .header-area .bar-icon.active::before{
+        position: absolute;
+        content: '';
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -9px !important;
+        border: 6px solid;
+        border-color: transparent transparent white transparent;
+    } 
     .landing .introduction-text{
         justify-content: center;
         max-width: 100% !important;
@@ -429,6 +440,10 @@ a:visited{
     }
 }
 @media (max-width:768px) {
+    .landing .header-area{
+        padding-top: 25px;
+        padding-right: 25px;
+    }
     .landing .header-area .logo{
         font-size: 25px;
         color: var(--main-text-color);
@@ -437,10 +452,45 @@ a:visited{
         font-size: 28px;
         align-items: center;
     }
+    .header-area .bar-icon{
+        display: block !important;
+        color: white;
+        position: relative;
+    }
+    .header-area .bar-icon:hover{
+        color: var(--main-color);
+    }
+    .header-area .bar-icon.active::before{
+        position: absolute;
+        content: '';
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -12px;
+        border: 8px solid;
+        border-color: transparent transparent white transparent;
+    } 
     .header-area ul{
-        padding-top: 20px;
+        top: -2050px;
         flex-direction: column;
-        gap: 10px;
+        background: white;
+        justify-content: left;
+        position: absolute;
+        width: 60%;
+        right: 30px;
+        gap: 6px;
+        padding: 6px;
+        /* top: 60px; */
+        transition: var(--main-transition);
+    }
+    .header-area ul a {
+        color: var(--main-color) !important;
+        margin: 0;
+        padding: 0;
+
+    }
+    .header-area .bar-icon.active:hover .header-area ul{
+        display: block !important;
+
     }
     .landing .introduction-text{
         justify-content: center;
