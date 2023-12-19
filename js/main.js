@@ -1,6 +1,7 @@
 // ELments
 const landing = document.querySelector(".landing"),
 header = document.querySelector(".header-area"),
+barIcon = document.querySelector(".header-area .bar-icon"),
 headerUl = document.querySelector(".header-area ul"),
 headerUlLi = document.querySelectorAll(".header-area ul li a"),
 settingsBox = document.querySelector(".settings-box"),
@@ -27,6 +28,15 @@ function autoSlideBackgrounds() {
     }, 10000);
 }
 
+// Header Navbar List
+barIcon.addEventListener("mouseover", () => {
+    barIcon.classList.add("active");
+    headerUl.style = "top: 60px; padding: 6px; gap:6;"
+});
+barIcon.addEventListener("mouseleave", () => {
+    barIcon.classList.remove("active");
+    headerUl.style = "top:-160px; padding:0; gap:0;"
+});
 
 autoSlideBackgrounds()
 
