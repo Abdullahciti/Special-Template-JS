@@ -1,9 +1,9 @@
 // ELments
 const landing = document.querySelector(".landing"),
-  header = document.querySelector(".header-area"),
-  barIcon = document.querySelector(".header-area .bar-icon"),
-  headerUl = document.querySelector(".header-area ul"),
-  headerUlLi = document.querySelectorAll(".header-area ul li a"),
+  // header = document.querySelector(".header-area"),
+  // barIcon = document.querySelector(".header-area .bar-icon"),
+  // headerUl = document.querySelector(".header-area ul"),
+  // headerUlLi = document.querySelectorAll(".header-area ul li a"),
   settingsBox = document.querySelector(".settings-box"),
   gearIconBox = document.querySelector(".gear-icon"),
   settingsIcon = document.querySelector(".fa-gear"),
@@ -37,12 +37,12 @@ function autoSlideBackgrounds() {
 }
 
 // Header Navbar List
-barIcon.addEventListener("mouseover", () => {
-  headerUl.classList.add("active");
-});
-barIcon.addEventListener("mouseleave", () => {
-  headerUl.classList.remove("active");
-});
+// barIcon.addEventListener("mouseover", () => {
+//   headerUl.classList.add("active");
+// });
+// barIcon.addEventListener("mouseleave", () => {
+//   headerUl.classList.remove("active");
+// });
 
 autoSlideBackgrounds();
 
@@ -170,11 +170,11 @@ showBullets.forEach((span, index) => {
 // Settings Box Html File => END
 // Start Nav Bullets and Ul Li Header Menu
 let navBullets = document.querySelectorAll(".nav-bullets .bullet");
-headerUlLi.forEach((li) => {
-  li.addEventListener("click", (e) => {
-    navBullets.forEach((bullet) => bullet.classList.remove("active"));
-  });
-});
+// headerUlLi.forEach((li) => {
+//   li.addEventListener("click", (e) => {
+//     navBullets.forEach((bullet) => bullet.classList.remove("active"));
+//   });
+// });
 
 if (localStorage.getItem("bullet") == "block") {
   navBullets.forEach((bullet) => (bullet.style.display = `block`));
@@ -208,7 +208,7 @@ resetBtn.onclick = () => {
 };
 // End Reset Button
 scrollToSection(navBullets);
-scrollToSection(headerUlLi);
+// scrollToSection(headerUlLi);
 // End Nav Bullets
 // Start Skills
 let skills = document.querySelector(".skills");
@@ -321,8 +321,19 @@ ourGallery.forEach((img) => {
 document.addEventListener("click", (e) => {
   if (e.target.className == "close-button") {
     e.target.parentNode.remove();
-
     document.querySelector(".popup-overlay").remove();
   }
+  else {
+    if (e.target.className == "popup-overlay") {
+      document.querySelector(".popup-overlay").remove();
+      document.querySelector(".popup-box").remove();
+    }
+  } 
 });
+
+let submitBtn = document.querySelector(".contact form .right input")
+
+submitBtn.onclick = (e) => {
+  e.preventDefault()
+}
 // Gallery End
