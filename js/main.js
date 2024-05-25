@@ -3,6 +3,7 @@ const landing = document.querySelector(".landing"),
   header = document.querySelector(".header"),
   navMenu = document.querySelector(".header .nav-menu"),
   about = document.querySelector(".about")
+  barIcon = document.querySelector(".header i"),
   settingsBox = document.querySelector(".settings-box"),
   gearIconBox = document.querySelector(".gear-icon"),
   settingsIcon = document.querySelector(".fa-gear"),
@@ -36,12 +37,12 @@ function autoSlideBackgrounds() {
 }
 
 // Header Navbar List
-// barIcon.addEventListener("mouseover", () => {
-//   headerUl.classList.add("active");
-// });
-// barIcon.addEventListener("mouseleave", () => {
-//   headerUl.classList.remove("active");
-// });
+barIcon.addEventListener("mouseover", () => {
+  navMenu.classList.add("active");
+});
+navMenu.addEventListener("mouseleave", () => {
+  navMenu.classList.remove("active");
+});
 
 autoSlideBackgrounds();
 
